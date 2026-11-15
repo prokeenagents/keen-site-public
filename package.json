@@ -1,0 +1,42 @@
+{
+    "name": "@keenagents/keen-site",
+    "version": "15.3.0",
+    "description": "The Keen site pre-process: runs in front of a Next.js site, keeps one signed link to Keen and starts, stops and restarts the site on Keen's word.",
+    "license": "UNLICENSED",
+    "type": "module",
+    "bin": {
+        "keen-site": "bin/keen-site.mjs"
+    },
+    "exports": {
+        ".": {
+            "types": "./types/index.d.mts",
+            "default": "./lib/index.mjs"
+        },
+        "./package.json": "./package.json"
+    },
+    "types": "./types/index.d.mts",
+    "engines": {
+        "node": ">=22.9"
+    },
+    "keywords": [
+        "keen",
+        "keenagents",
+        "nextjs",
+        "site-control",
+        "pre-process"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "bin/keen-site.mjs",
+        "lib/*.mjs",
+        "lib/site-env-denylist.json",
+        "types/*.d.mts",
+        "README.md"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/prokeenagents/keen-site-public.git"
+    }
+}

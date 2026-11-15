@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+import{readFileSync as i}from"node:fs";import{USAGE as r,loadEnvFileIfExists as t,parseArgs as c}from"../lib/cli.mjs";import{run as a}from"../lib/main.mjs";function s(e){console.error(`[keen-site] Could not start: ${e}`),process.exit(1)}let o;try{o=c(process.argv.slice(2),process.env)}catch(e){console.error(`[keen-site] ${e instanceof Error?e.message:e}
+
+${r}`),process.exit(2)}o.action==="help"&&(console.log(r),process.exit(0)),o.action==="version"&&(console.log(JSON.parse(i(new URL("../package.json",import.meta.url),"utf8")).version),process.exit(0));const n=process.cwd();try{t(o.envFile,n)&&console.log(`[keen-site] Environment file ${o.envFile} loaded.`)}catch(e){s(e instanceof Error?e.message:String(e))}a({root:n}).catch(e=>s(e instanceof Error?e.message:String(e)));
